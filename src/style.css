@@ -1,0 +1,49 @@
+.gioco {
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;
+  min-height: 260px;
+}
+
+.gioco ol,
+.gioco ul {
+  padding-left: 30px;
+}
+
+.tabella-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.casella {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.casella:focus {
+  outline: none;
+  background: #ddd;
+}
+
+.gioco {
+  display: flex;
+  flex-direction: row;
+}
+
+.gioco-info {
+  margin-left: 20px;
+}
