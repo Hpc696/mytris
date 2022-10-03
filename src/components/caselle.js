@@ -1,6 +1,8 @@
-//comp board row
 import React from 'react'
-function Casella () {
-    return (<div> Ciao </div> )
-}
-export default Casella;
+export default function Casella({ onClick, value }) {
+    return (
+      <button className="square" onClick={onClick}>
+        {value}
+      </button>
+    );
+  }

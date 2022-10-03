@@ -1,11 +1,8 @@
 import React from 'react'
-//import ReactDOM from 'react-dom'
+//import ReactDOM from 'react-dom' versione vecchia ormai
 import { createRoot } from 'react-dom/client';
 import './style.css'
-//import Tabella from './components/tabella.js'
-import Casella from './components/caselle';
-import Tabella from './components/tabella';
-
+import Board from './components/tabella';
 /*function Gioco() {
   return (
     <div className="gioco">
@@ -13,7 +10,7 @@ import Tabella from './components/tabella';
     </div>
   )
 }*/
-//ReactDOM.render(<Gioco />, document.getElementById('root'));
+//ReactDOM.render(<Gioco />, document.getElementById('root')); versione vecchia ormai
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<Tabella />);
+root.render( <Board />);

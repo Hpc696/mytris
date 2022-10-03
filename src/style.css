@@ -12,6 +12,12 @@ div.status{
   justify-content: center;
 
 }
+.board-row > div {
+  background-color: azure;
+  display: inline-block;
+  border: 1px solid red;
+  padding: 5px;
+}
 
 .gioco ol,
 .gioco ul {
