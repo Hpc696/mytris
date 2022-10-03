@@ -1,5 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+//import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import './style.css'
 import calcolovincitore from './vincitore'
 
@@ -89,4 +90,7 @@ function Gioco() {
   )
 }
 
-ReactDOM.render(<Gioco />, document.getElementById('root'));
+//ReactDOM.render(<Gioco />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<Gioco />);
