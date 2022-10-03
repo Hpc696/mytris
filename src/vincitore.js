@@ -17,5 +17,4 @@ function calcolovincitore(caselle) {
     }
     return null
   }
-  
-  export default calcolovincitore;
+export default calcolovincitore;
