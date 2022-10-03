@@ -10,6 +10,11 @@ div.status{
   font: 14px 'Century Gothic', Futura, sans-serif;
   margin: 20px;
   justify-content: center;
+}
+.square {
+    background-color: azure;
+    width: 100px;
+    height: 100px;
 
 }
 .board-row > div {

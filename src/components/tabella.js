@@ -22,9 +22,9 @@ export default function Board () {
   let status=0;
   
   if (vincitore) {
-    status = `Vincitore: ${vincitore}`;
+    status = (<span> Vincitore: ${vincitore} </span>);
   } else {
-    status = 'Tocca a: ' + (isX ? <FontAwesomeIcon icon={faXmark}/> : <FontAwesomeIcon icon={faO} />);
+    status = (<span>Tocca a: <FontAwesomeIcon icon={isX ? faXmark : faO}/> </span>)
   }
   
   const Restart = () => {
@@ -32,19 +32,21 @@ export default function Board () {
     setSquares(Array(9).fill(null))
   }
 
-  const renderSquare = (i) => {
-    return <Casella value={squares[i]} onClick={() => Click(i)} />
-  }
-  for(let i=0; i<3;i++){
-    Array.push(<div className='row-board'>{renderSquare}</div>)
+  
+  let lista = []
+  for(let row=0; row<3; row++){
+    let rowEL= (<div key={row} className='row-board'>
+      {[0,1,2].map((n , col) => <Casella key={row*3+col} onClick={(squares[row*3+col]) => Click(row*3+col)} /> )}
+    </div>)
+    lista.push(rowEL)
   }
   return (
+    <>
     <div className="board">
-       {Array}
+       {lista}
     <div className="status">{status}</div>
     <button className="restart" onClick={Restart}>---Rigioca---</button>
     </div>
+    </>
   )
 }
-
-
