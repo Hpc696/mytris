@@ -3,6 +3,9 @@ import { faO, faXmark } from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect } from 'react'
 import Calcolovincitore from "../vincitore.js"
 import Casella from './caselle.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Button from 'react-bootstrap/Button'
+
 
 export default function Board () {
   const [squares, setSquares] = React.useState(Array(9).fill(0));
@@ -32,15 +35,15 @@ console.log("ora")
   const vincitore = Calcolovincitore(squares)
   let stato=0;
   if (vincitore===1) {
-    stato = <span> Vincitore: <FontAwesomeIcon icon={faXmark}/></span>
+    stato = <span> VINCITORE: <FontAwesomeIcon className='m-1' color='#0d6efd' icon={faXmark}/></span>
   } else if (vincitore===2) {
-    stato = <span> Vincitore: <FontAwesomeIcon icon={faO}/></span>
+    stato = <span> VINCITORE: <FontAwesomeIcon className='m-1' color='#0d6efd' icon={faO}/></span>
+  } else if (cont===9){
+    stato = <span> PAREGGIO </span>
   } else {
-    stato = <span>Tocca a: <FontAwesomeIcon icon={isX ? faXmark : faO}/> </span>
+    stato = <span>TOCCA A: <FontAwesomeIcon className='m-1' color='#0d6efd' icon={isX ? faXmark : faO}/> </span>
   }
-  if (cont===9){
-    stato = <span>PAREGGIO </span>
-  }
+  
   return (
     stato
   )
@@ -72,8 +75,8 @@ console.log("ora")
   return (
     <div className="board">
        {/*griglia*/} {lista}
-    <div className="stato">{Turnodi()}</div>
-    <button className="restart" onClick={Restart}>---Rigioca---</button>
+    <div className="stato position-relative fs-2 fw-bold m-5">{Turnodi()}</div>
+    <Button className="restart btn btn-primary btn-lg" onClick={Restart}> RIGIOCA </Button>
     </div>
   )
 }

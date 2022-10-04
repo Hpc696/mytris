@@ -1,62 +1,47 @@
-body{
-  justify-content: center;
+html, body {
+  height: 100vh;
+  background-color: #F5F5F5;
 }
-div.stato{
-  font-weight: bold;
-  font-size: large;
-  margin:10px;
+* {
+  padding: 0;
+  margin: 0;
 }
-.gioco {
-  font: 14px 'Century Gothic', Futura, sans-serif;
-  margin: 20px;
-  justify-content: center;
+.board {
+  margin: 0 auto;
+  display: grid;
+  max-width: 300px;
+}
+span{
+  height: auto;
+  width: auto;
+  display: table;
+  margin: 0 auto;
+  
+}
+.row-board{
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 100px;
+  min-height: 100px;
 }
 .square {
-    background-color: azure;
+    /*outline: 0;*/
     width: 100px;
     height: 100px;
+}
+/*button:active {
+  border-style: outset;
+}*/
+#root{
+  margin: 5%;
+}
+button.active.focus, button.active:focus,
+button.focus, button:active.focus, 
+button:active:focus, button:focus {
+  min-width: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  min-height: 100px;
+  vertical-align: baseline;
 
 }
-.board-row > div {
-  background-color: azure;
-  display: inline-block;
-  border: 1px solid red;
-  padding: 5px;
-}
-
-.gioco ol,
-.gioco ul {
-  padding-left: 30px;
-}
-
-.tabella-row:after {
-  clear: both;
-  content: '';
-  display: table;
-}
-
-.casella {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.casella:focus {
-  outline: none;
-  background: #ddd;
-}
-
-.gioco {
-  display: flex;
-  flex-direction: row;
-}
-

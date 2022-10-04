@@ -6,12 +6,12 @@ export default function Casella({ onClick, stato}) {
     if(stato===0){
       stato=<span> </span>;
     }else if(stato===1){
-      stato= <FontAwesomeIcon icon={faXmark}/>
+      stato= <FontAwesomeIcon className='fa-3x' color='white' icon={faXmark}/>
     }else{
-      stato= <FontAwesomeIcon icon={faO}/>
+      stato= <FontAwesomeIcon className='fa-3x' color='white' icon={faO}/>
     }
     return (
-      <button className="square" onClick={onClick}>
+      <button className="square bg-primary" onClick={onClick}>
       {stato}
       </button>
     );
