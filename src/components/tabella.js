@@ -5,9 +5,13 @@ import Calcolovincitore from "../vincitore.js"
 import Casella from './caselle.js'
 
 export default function Board () {
-  const [squares, setSquares] = React.useState(Array(9).fill(0))
+  const [squares, setSquares] = React.useState(Array(9).fill(0));
   const [isX, setIsX] = React.useState(true);
-
+  const [cont, setcont] = React.useState(0);
+  const increm = () => {
+    setcont(cont => cont+1);
+    return
+  }
   const Click = (i) => {
     if (Calcolovincitore(squares) || squares[i]) {
       return
@@ -15,6 +19,7 @@ export default function Board () {
     squares[i] = isX ? 1 : 2 ;
     setSquares(squares)
     setIsX(!isX)
+    increm();
   }
 
   function Turnodi(){
@@ -25,7 +30,10 @@ export default function Board () {
   } else if (vincitore===2) {
     stato = <span> Vincitore: <FontAwesomeIcon icon={faO}/></span>
   } else {
-    stato = (<span>Tocca a: <FontAwesomeIcon icon={isX ? faXmark : faO}/> </span>)
+    stato = <span>Tocca a: <FontAwesomeIcon icon={isX ? faXmark : faO}/> </span>
+  }
+  if (cont===9){
+    stato = <span>PAREGGIO </span>
   }
   return (
     stato
