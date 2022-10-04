@@ -43,6 +43,7 @@ export default function Board () {
   const Restart = () => {
     setIsX(true)
     setSquares(Array(9).fill(0))
+    setcont(0);
   }
 
   
